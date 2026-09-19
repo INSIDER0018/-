@@ -1,0 +1,204 @@
+:root {
+  --primary: #3367d6;
+  --primary-hover: #2a56c4;
+  --bg: #ffffff;
+  --text: #202124;
+  --muted: #5f6368;
+  --border: #e0e0e0;
+  --active: #e8f0fe;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.container {
+  padding: 14px 16px;
+}
+
+/* 头部 */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.header h1 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* 信息区 */
+.info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+.info-row .label {
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.info-row .value {
+  font-weight: 500;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* 通用块 */
+.block {
+  margin-bottom: 12px;
+}
+
+.block-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* 开关行（静音） */
+.switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  border-radius: 22px;
+  transition: 0.2s;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background: var(--primary);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* 提示消息 */
+.message {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.message.error {
+  background: #fdecea;
+  color: #d93025;
+  border: 1px solid #f5c6c0;
+}
+
+.message.success {
+  background: #e6f4ea;
+  color: #188038;
+  border: 1px solid #b7e1c1;
+}
+
+.message.info {
+  background: #e8f0fe;
+  color: #1967d2;
+  border: 1px solid #c5d8f8;
+}
+
+/* 启动按钮 */
+.start-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.start-btn:hover {
+  background: var(--primary-hover);
+}
+
+.start-btn.running {
+  background: #ea4335;
+}
+
+.start-btn.running:hover {
+  background: #d33426;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}

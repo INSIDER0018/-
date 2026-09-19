@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自动播放雨课堂</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <span class="logo">▶</span>
+      <h1>自动播放雨课堂</h1>
+    </header>
+
+    <!-- 课程信息 -->
+    <section class="info">
+      <div class="info-row">
+        <span class="label">网课名称</span>
+        <span class="value" id="courseName">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">当前进度</span>
+        <span class="value" id="section">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">视频</span>
+        <span class="value" id="progress">—</span>
+      </div>
+    </section>
+
+    <!-- 静音 -->
+    <section class="block">
+      <div class="switch-row">
+        <span class="block-title">静音播放</span>
+        <label class="switch">
+          <input type="checkbox" id="muteToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- 提示消息 -->
+    <div class="message" id="message" style="display:none;"></div>
+
+    <!-- 启动 -->
+    <button class="start-btn" id="startBtn">开始自动播放</button>
+
+    <footer class="footer">
+      仅适用于雨课堂网课学习页
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

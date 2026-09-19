@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "自动播放雨课堂插件",
+  "version": "1.0.0",
+  "description": "自动播放雨课堂网课视频：顺序播放、跳过测试题、可选静音、规避切标签页暂停",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "*://*.yuketang.cn/*",
+    "*://*.xuetangx.com/*",
+    "*://*.xuetang.cn/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.yuketang.cn/*",
+        "*://*.xuetangx.com/*",
+        "*://*.xuetang.cn/*"
+      ],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.yuketang.cn/*",
+        "*://*.xuetangx.com/*",
+        "*://*.xuetang.cn/*"
+      ],
+      "js": ["content/main-world.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "自动播放雨课堂",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
